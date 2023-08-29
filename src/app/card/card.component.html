@@ -4,34 +4,32 @@
 
             <div class="flex flex-col w-3/6  h-full">
               <div class="mb-4 flex justify-center ">
-                
+
                 <h1 class="pb-4 justify-end text-3xl font-bold font-serif  text-purple-500 ">Calculadora de muestra</h1>
               </div>
 
-                
+
 
                 <div class=" w-100 h-80 ">
-                  
+
                     <form (ngSubmit)="onSubmit()" [formGroup]="calculoForm" class="  ">
                       <div class="pb-12">
                         <input type="radio" class="" formControlName="poblationForm" name="poblationForm" id="poblationForm" value="opcion1"  > <label class=" ml-4 font-serif" >Poblacion finita</label>
                         <input type="radio" class="ml-20 " formControlName="poblationForm" name="poblationForm" id="poblationForm" value="opcion2"  > <label class="ml-4 font-serif" >Poblacion infinita</label>
-                    </div>
+                      </div>
                       <div class=" mb-6  flex flex-row justify-start " >
                         <label class="font-serif  w-40 text-gray-700 text-sm  font-bold">
                             Nivel de confianza :
                         </label>
-                        <input  class="shadow appearance-none border 
-                        rounded w-80 py-2 px-3 text-gray-700 leading-tight  focus:outline-none focus:shadow-outline" 
-                         type="text" 
+                        <input  class="shadow appearance-none border
+                        rounded w-80 py-2 px-3 text-gray-700 leading-tight  focus:outline-none focus:shadow-outline"
+                         type="text"
                          placeholder=""
-                          formControlName="nivel" 
+                          formControlName="nivel"
                           id="nivel"  >
                           <div  class="bg-red-200 " *ngIf="this.calculoForm.get('nivel')?.errors?.['pattern']">
                             El campo debe ser numerico
                           </div>
-                         
-
                       </div>
                       <div class="mb-2 flex flex-row">
                         <label class="w-40 font-serif  block text-gray-700  text-sm font-bold mb-2" >
@@ -48,7 +46,7 @@
                             Población:
                         </label>
                         <input class="shadow appearance-none border rounded w-80  py-2 px-3
-                         text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                         text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                           type="text" placeholder="" formControlName="cantPoblacion" id="cantPoblacion"   >
                           <div  class="bg-red-200 " *ngIf="this.calculoForm.get('cantPoblacion')?.errors?.['pattern']">
                             El campo debe ser numerico
@@ -56,26 +54,26 @@
 
                       </div>
                       <div class="flex items-center justify-start pt-8">
-                        <button class="font-serif bg-purple-500 hover:bg-pink-400  text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline" type="submit">
-                          Limpiar 
+                        <button (click)="limpiarForm()" class="font-serif bg-purple-500 hover:bg-pink-400  text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline" type="submit">
+                          Limpiar
                         </button>
-                        <button class="font-serif ml-4 bg-purple-500 hover:bg-pink-400 text-white font-bold py-2 px-4 
+                        <button class="font-serif ml-4 bg-purple-500 hover:bg-pink-400 text-white font-bold py-2 px-4
                         rounded-full focus:outline-none focus:shadow-outline" type="submit">
                           Calcular
                         </button>
-                       
+
                       </div>
                     </form>
 
                   </div>
-             
+
             </div>
             <div class=" w-3/6 h-full flex flex-col justify-center ">
                 <div  class=" w-9/12 h-3/6  ml-20 flex justify-center " >
                   <img class="w-50 h-50" src="./../../assets/img/poblacion.png" alt="">
                 </div>
                 <div class=" w-9/12 h-3/6 bg-blue-200 ml-20">
-                  <h1>buenas</h1>
+                  <h1>{{sum}}</h1>
                 </div>
             </div>
         </div>
