@@ -24,7 +24,7 @@ export class CardComponent {
 
 
   constructor(private readonly fb: FormBuilder){
-  
+
   }
 
   ngOnInit(): void {
@@ -34,7 +34,7 @@ export class CardComponent {
       precision: ['',[Validators.required ,Validators.pattern(/^[0-9]*$/) ]],
       cantPoblacion: ['',[Validators.required ,Validators.pattern(/^[0-9]*$/)]]
      })
-   
+
 
 
 
@@ -66,6 +66,9 @@ export class CardComponent {
     return this.calculoForm.get('poblationForm');
   }
 
+  limpiarForm(){
+    this.calculoForm.reset();
+  }
 
  
   
@@ -79,7 +82,7 @@ export class CardComponent {
 
  
   if(this.calculoForm.get('poblationForm')?.value == 'opcion1'){
-     
+
     if(this.nivelControl?.value == 95){
 
       // const suma = Math.pow(2,2)
@@ -101,11 +104,11 @@ export class CardComponent {
   
 
     }
-    
-    
+
+
   } else{
- 
-  
+
+
     if(this.nivelControl?.value == 95){
 
       // const suma = Math.pow(2,2)
@@ -120,11 +123,12 @@ export class CardComponent {
 
       Z = 2.58
       const suma = (Math.pow(2.58,2)*(0.5)*(0.5))/(Math.pow(e/100,2))
+
       this.content = `$x = {(${Z}^2)(0.5)(0.5) \\over (${e})^2}$`  
       this.content2 = "="+suma.toString()
 
     }
-    
+
   }
 
 
@@ -132,7 +136,7 @@ export class CardComponent {
 
     
     if (this.calculoForm.valid) {
-      
+
       this.resultado = "Todos los datos son válidos";
       const opcionSeleccionada = this.calculoForm.get('poblationForm')?.value;
       console.log(opcionSeleccionada)
