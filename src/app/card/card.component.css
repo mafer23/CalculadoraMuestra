@@ -1,0 +1,18 @@
+/* Apply responsive styles to the SweetAlert modal */
+.swal2-popup {
+    max-width: 100%;
+}
+
+/* Adjust font size based on screen width */
+@media screen and (max-width: 768px) {
+    .swal2-popup {
+        font-size: 14px;
+    }
+}
+
+/* Additional CSS for the body */
+body {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
