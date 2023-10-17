@@ -139,14 +139,19 @@ export class CardComponent {
 
       this.resultado = "Todos los datos son válidos";
       const opcionSeleccionada = this.calculoForm.get('poblationForm')?.value;
-      console.log(opcionSeleccionada)
-      console.log('Form ->', this.calculoForm.value)
+  
     } else {
       Swal.fire({
         icon: 'error',
         title: 'Oops...no puedes seguir',
         text: 'Llena los campos por favor',
       })
+
+      this.calculoForm.reset();
+      this.content = '';
+      this.content2 = '';
+      this.content1.textContent = '';
+      this.content23.textContent = '';
     
     }
 
