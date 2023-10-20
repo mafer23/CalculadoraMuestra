@@ -1,42 +1,49 @@
 <section class="w-screen h-screen  justify-center">
-  <div class="flex flex-col  md:flex-row ml-10 md:ml-20  w-full h-screen justify-center ">
-    <div class="flex flex-col md:flex-row mt-20 md:mt-12 justify-center  rounded-3xl  w-4/5  h-3/5 md:w-7/12 md:h-3/5 bg-purple-300 shadow-md rounded px-8 pt-6 pb-8 mb-4">
-      <div class="flex flex-col w-11/12  md:w-9/12 md:h-full  ">
-        <div class=" flex justify-center items-center mt-12 md:mt-0">
-          <h1 class=" justify-end text-xl font-bold font-serif text-purple-500">
+  <div class="flex flex-col  md:flex-row ml-10 mt-20 md:mt-0 md:ml-0  w-full h-screen justify-center ">
+    <div class="flex flex-col md:flex-row   md:mt-12 justify-center  items-center rounded-3xl  w-4/5  h-4/5 md:w-7/12 md:h-3/5 bg-purple-300 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <div class="flex flex-col mt-14 md:mt-0  w-full h-6/12  md:w-9/12 md:h-full justify-center items-center">
+        <div class=" justify-center md:mt-0">
+          <h1 class=" md:justify-end  text-md md:text-xl font-bold font-serif text-purple-500">
             Calculadora de muestra
           </h1>
         </div>
 
-        <div class=" w-9/12  md:w-11/12 ml-1  h-80">
-          <form (ngSubmit)="onSubmit()" [formGroup]="calculoForm" >
-            <div class="  pb-0 flex flex-row   md:pb-14">
-              <input
-                type="radio"
-                class=""
-                formControlName="poblationForm"
-                name="poblationForm"
-                id="poblationForm"
-                value="opcion1"
-              />
-              <label class="md:ml-4 font-serif">Poblacion finita</label>
-              <input
-                type="radio"
-                class="ml-20"
-                formControlName="poblationForm"
-                name="poblationForm"
-                id="poblationForm"
-                value="opcion2"
-                [(ngModel)]="checkBoxMarcado"
-              />
-              <label class="md:ml-4 font-serif">Poblacion infinita</label>
+        <div class=" w-11/12  md:w-11/12 ml-1 mt-4 h-11/12">
+          <form (ngSubmit)="onSubmit()" [formGroup]="calculoForm"  class="">
+            <div class=" md:mb-0 bg-green-400 flex   flex-col  justify-center items-center md:flex-row   md:pb-14">
+
+              <div class="flex  w-3/4 items-center bg-pink-300 ">
+
+                <input
+                  type="radio"
+                  class=" "
+                  formControlName="poblationForm"
+                  name="poblationForm"
+                  id="poblationForm"
+                  value="opcion1"
+                />
+                <label class=" bg-purple-700  md:ml-4 font-serif">Poblacion finita</label>
+              </div>
+              <div class=" flex  flex-row w-3/4 bg-purple-500">
+
+                <input
+                  type="radio"
+                  class=" md:ml-20"
+                  formControlName="poblationForm"
+                  name="poblationForm"
+                  id="poblationForm"
+                  value="opcion2"
+                  [(ngModel)]="checkBoxMarcado"
+                />
+                <label class=" md:ml-4 font-serif">Poblacion infinita</label>
+              </div>
             </div>
             <div class="mb-6 flex flex-col md:flex-row justify-start">
               <label class="font-serif w-40 text-gray-700 text-sm font-bold">
                 Nivel de confianza :
               </label>
               <input
-                class="shadow appearance-none border rounded w-40 md:w-80 md:py-2 md:px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                class="shadow appearance-none border rounded w-full	 md:w-80 md:py-2 md:px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 type="text"
                 placeholder="Digite 99 o 95 "
                 formControlName="nivel"
@@ -56,7 +63,7 @@
                 Precisión de error:
               </label>
               <input
-                class="shadow appearance-none border rounded w-40 md:w-80 md:py-2 md:px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                class="shadow appearance-none border rounded w-full	 md:w-80 md:py-2 md:px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                 type="text"
                 placeholder=""
                 formControlName="precision"
@@ -76,7 +83,7 @@
                 Población:
               </label>
               <input
-                class="shadow appearance-none border rounded w-40 md:w-80 md:py-2 md:px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                class="shadow appearance-none border rounded w-full	 md:w-80 md:py-2 md:px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 type="text"
                 placeholder=""
                 formControlName="cantPoblacion"
@@ -90,16 +97,16 @@
                 El campo debe ser numerico
               </div>
             </div>
-            <div class="flex items-center justify-start pt-8">
+            <div class="flex w-4/5	 items-center justify-start pt-1 md:pt-8">
               <button
-                class="font-serif bg-purple-500 hover:bg-pink-400 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+                class="font-serif bg-purple-500 hover:bg-pink-400 text-white font-bold py-2 px-2 rounded-full focus:outline-none focus:shadow-outline"
                 type="submit"
                 (click)="limpiar()"
               >
                 Limpiar
               </button>
               <button
-                class="font-serif ml-4 bg-purple-500 hover:bg-pink-400 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+                class="font-serif ml-4 bg-purple-500 hover:bg-pink-400 text-white font-bold py-2 px-2 rounded-full focus:outline-none focus:shadow-outline"
                 type="submit"
               >
                 Calcular
@@ -109,7 +116,7 @@
           
         </div>
       </div>
-      <div class="w-5/6 md:w-2/5 md:h-full flex  flex-row  md:flex-col justify-center">
+      <div class="w-full   md:w-2/5 md:h-full flex  md:flex-row  md:flex-col justify-center items-center">
         <div class=" w-0 md:w-9/12 md:h-3/6 md:ml-20 flex justify-center">
           <img
             class=" w-20 h-20 md:w-40 md:h-40 "
@@ -117,7 +124,7 @@
             alt=""
           />
         </div>
-        <div class="w-screen md:w-11/12 md:h-3/6 bg-white md:ml-10 justify-center items-center flex flex-col" #formulaDiv>
+        <div class="w-11/12 h-4/6 rounded-lg md:w-11/12 md:h-3/6 bg-white md:ml-10 justify-center items-center flex flex-col" #formulaDiv>
           <!-- <mathjax [content]="'yourMathContent'"></mathjax> -->
           <h1 [mathjax]="content" class="text-sm"  id="content1" >
             hi            
@@ -128,7 +135,7 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-row mt-4 md:mt-12 ml-2 justify-center   rounded-3xl w-4/5 md:w-1/5 h-4/6 bg-purple-300 shadow-md rounded px-8 pt-6 pb-8 md:mb-4">
+    <div class="flex flex-row mt-4 md:mt-12 ml-2 justify-center   rounded-3xl w-4/5 md:w-1/5 h-4/6 md:h-3/5 bg-purple-300 shadow-md rounded px-8 pt-6 pb-8 md:mb-4">
      <ul class="text-xs font-serif">
       <li> <span class="font-bold">N</span>  = Tamaño de la población</li>
       <li>  <span class="font-bold"> Z  </span>   = Parámetro estadístico que depende el Nivel de Confianza(NC)</li>
